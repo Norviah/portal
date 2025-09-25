@@ -283,11 +283,11 @@ export const managerSidebarConfig: SidebarConfig = {
           url: "/dashboard/manager/permissions",
           icon: Settings,
         },
-        {
-          title: "Client Feedback",
-          url: "/dashboard/manager/feedback",
-          icon: MessageSquare,
-        },
+        // {
+        //   title: "Client Feedback",
+        //   url: "/dashboard/manager/feedback",
+        //   icon: MessageSquare,
+        // },
       ],
     },
     {
@@ -305,11 +305,11 @@ export const managerSidebarConfig: SidebarConfig = {
           url: "/dashboard/manager/assignments",
           icon: Calendar,
         },
-        {
-          title: "Performance",
-          url: "/dashboard/manager/performance",
-          icon: BarChart3,
-        },
+        // {
+        //   title: "Performance",
+        //   url: "/dashboard/manager/performance",
+        //   icon: BarChart3,
+        // },
         {
           title: "Schedules",
           url: "/dashboard/manager/schedules",
@@ -473,7 +473,7 @@ export const clientSidebarConfig: SidebarConfig = {
       ],
     },
     {
-      title: "Decisions & Feedback",
+      title: "Decisions",
       url: "#",
       icon: CheckCircle,
       items: [
@@ -487,11 +487,11 @@ export const clientSidebarConfig: SidebarConfig = {
         //   url: "/dashboard/client/decisions/history",
         //   icon: CheckCircle,
         // },
-        {
-          title: "Feedback Forms",
-          url: "/dashboard/client/feedback",
-          icon: MessageSquare,
-        },
+        // {
+        //   title: "Feedback Forms",
+        //   url: "/dashboard/client/feedback",
+        //   icon: MessageSquare,
+        // },
         // {
         //   title: "Change Requests",
         //   url: "/dashboard/client/changes",
