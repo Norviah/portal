@@ -81,7 +81,7 @@ interface Budget {
   }>;
 }
 
-export default function ManagerBudgetsPage() {
+export default function ClientBudgetsPage() {
   const [user, setUser] = useState<User | null>(null);
   const [budgets, setBudgets] = useState<Budget[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -419,7 +419,7 @@ export default function ManagerBudgetsPage() {
       startDate: newBudget.startDate,
       endDate: newBudget.endDate,
       lastUpdated: new Date().toISOString(),
-      createdBy: user?.name || "Manager",
+      createdBy: user?.name || "Client",
       lineItems: [],
       alerts: [],
     };
@@ -447,13 +447,13 @@ export default function ManagerBudgetsPage() {
 
   return (
     <SidebarProvider>
-      <AppSidebar role="manager" user={user ? { name: user.name || "", email: user.email || "" } : undefined} />
+      <AppSidebar role="client" user={user ? { name: user.name || "", email: user.email || "" } : undefined} />
       <SidebarInset className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-blue-900/20 dark:to-indigo-900/20 min-h-screen">
         <DashboardHeader
           title="Budget Management"
           description="Monitor and manage project budgets and expenses"
           breadcrumbs={[
-            { label: "Manager Dashboard", href: "/dashboard/manager" },
+            { label: "Client Portal", href: "/dashboard/client" },
             { label: "Financial Management", href: "#" },
             { label: "Budgets", isCurrentPage: true },
           ]}

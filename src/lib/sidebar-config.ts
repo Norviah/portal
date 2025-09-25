@@ -1,19 +1,19 @@
-import { 
-  Shield, 
-  Users, 
-  User, 
-  Home, 
-  FileText, 
-  BarChart3, 
-  Settings, 
-  Calendar, 
-  MessageSquare, 
-  Upload, 
-  Download, 
-  DollarSign, 
-  PieChart, 
-  Clock, 
-  CheckCircle, 
+import {
+  Shield,
+  Users,
+  User,
+  Home,
+  FileText,
+  BarChart3,
+  Settings,
+  Calendar,
+  MessageSquare,
+  Upload,
+  Download,
+  DollarSign,
+  PieChart,
+  Clock,
+  CheckCircle,
   AlertTriangle,
   Building,
   Wrench,
@@ -25,7 +25,8 @@ import {
   Filter,
   Bell,
   HelpCircle,
-  LogOut
+  LogOut,
+  BellIcon,
 } from "lucide-react";
 
 export interface NavigationItem {
@@ -227,7 +228,13 @@ export const managerSidebarConfig: SidebarConfig = {
       title: "Dashboard",
       url: "/dashboard/manager",
       icon: Home,
-      isActive: true,
+      items: [
+        {
+          title: "Home",
+          url: "/dashboard/manager",
+          icon: Home,
+        },
+      ],
     },
     {
       title: "My Projects",
@@ -320,50 +327,50 @@ export const managerSidebarConfig: SidebarConfig = {
           url: "/dashboard/manager/budgets",
           icon: DollarSign,
         },
-        {
-          title: "Invoices",
-          url: "/dashboard/manager/invoices",
-          icon: FileText,
-        },
-        {
-          title: "Payments",
-          url: "/dashboard/manager/payments",
-          icon: CheckCircle,
-        },
-        {
-          title: "Reports",
-          url: "/dashboard/manager/reports",
-          icon: BarChart3,
-        },
+        // {
+        //   title: "Invoices",
+        //   url: "/dashboard/manager/invoices",
+        //   icon: FileText,
+        // },
+        // {
+        //   title: "Payments",
+        //   url: "/dashboard/manager/payments",
+        //   icon: CheckCircle,
+        // },
+        // {
+        //   title: "Reports",
+        //   url: "/dashboard/manager/reports",
+        //   icon: BarChart3,
+        // },
       ],
     },
-    {
-      title: "Tools",
-      url: "#",
-      icon: Wrench,
-      items: [
-        {
-          title: "Gantt Charts",
-          url: "/dashboard/manager/gantt",
-          icon: BarChart3,
-        },
-        {
-          title: "File Management",
-          url: "/dashboard/manager/files",
-          icon: Upload,
-        },
-        {
-          title: "Decision Tracking",
-          url: "/dashboard/manager/decisions",
-          icon: CheckCircle,
-        },
-        {
-          title: "Notifications",
-          url: "/dashboard/manager/notifications",
-          icon: Bell,
-        },
-      ],
-    },
+    // {
+    //   title: "Tools",
+    //   url: "#",
+    //   icon: Wrench,
+    //   items: [
+    //     {
+    //       title: "Gantt Charts",
+    //       url: "/dashboard/manager/gantt",
+    //       icon: BarChart3,
+    //     },
+    //     {
+    //       title: "File Management",
+    //       url: "/dashboard/manager/files",
+    //       icon: Upload,
+    //     },
+    //     {
+    //       title: "Decision Tracking",
+    //       url: "/dashboard/manager/decisions",
+    //       icon: CheckCircle,
+    //     },
+    //     {
+    //       title: "Notifications",
+    //       url: "/dashboard/manager/notifications",
+    //       icon: Bell,
+    //     },
+    //   ],
+    // },
   ],
   projects: [
     {
@@ -398,7 +405,13 @@ export const clientSidebarConfig: SidebarConfig = {
       title: "Project Portal",
       url: "/dashboard/client",
       icon: Home,
-      isActive: true,
+      items: [
+        {
+          title: "Home",
+          url: "/dashboard/client",
+          icon: Home,
+        },
+      ],
     },
     {
       title: "Project Overview",
@@ -409,6 +422,11 @@ export const clientSidebarConfig: SidebarConfig = {
           title: "Project Details",
           url: "/dashboard/client/project",
           icon: FileText,
+        },
+        {
+          title: "Updates",
+          url: "/dashboard/client/updates",
+          icon: BellIcon,
         },
         {
           title: "Progress Tracking",
@@ -464,21 +482,21 @@ export const clientSidebarConfig: SidebarConfig = {
           url: "/dashboard/client/decisions",
           icon: Clock,
         },
-        {
-          title: "Decision History",
-          url: "/dashboard/client/decisions/history",
-          icon: CheckCircle,
-        },
+        // {
+        //   title: "Decision History",
+        //   url: "/dashboard/client/decisions/history",
+        //   icon: CheckCircle,
+        // },
         {
           title: "Feedback Forms",
           url: "/dashboard/client/feedback",
           icon: MessageSquare,
         },
-        {
-          title: "Change Requests",
-          url: "/dashboard/client/changes",
-          icon: Edit,
-        },
+        // {
+        //   title: "Change Requests",
+        //   url: "/dashboard/client/changes",
+        //   icon: Edit,
+        // },
       ],
     },
     {
@@ -491,21 +509,21 @@ export const clientSidebarConfig: SidebarConfig = {
           url: "/dashboard/client/files",
           icon: Upload,
         },
-        {
-          title: "Downloads",
-          url: "/dashboard/client/downloads",
-          icon: Download,
-        },
-        {
-          title: "Photo Gallery",
-          url: "/dashboard/client/gallery",
-          icon: Eye,
-        },
-        {
-          title: "Documents",
-          url: "/dashboard/client/documents",
-          icon: FileText,
-        },
+        // {
+        //   title: "Downloads",
+        //   url: "/dashboard/client/downloads",
+        //   icon: Download,
+        // },
+        // {
+        //   title: "Photo Gallery",
+        //   url: "/dashboard/client/gallery",
+        //   icon: Eye,
+        // },
+        // {
+        //   title: "Documents",
+        //   url: "/dashboard/client/documents",
+        //   icon: FileText,
+        // },
       ],
     },
     {
@@ -515,24 +533,24 @@ export const clientSidebarConfig: SidebarConfig = {
       items: [
         {
           title: "Invoices",
-          url: "/dashboard/client/invoices",
+          url: "/dashboard/client/budgets",
           icon: FileText,
         },
-        {
-          title: "Payments",
-          url: "/dashboard/client/payments",
-          icon: DollarSign,
-        },
-        {
-          title: "Budget Overview",
-          url: "/dashboard/client/budget",
-          icon: PieChart,
-        },
-        {
-          title: "Payment History",
-          url: "/dashboard/client/payments/history",
-          icon: Clock,
-        },
+        // {
+        //   title: "Payments",
+        //   url: "/dashboard/client/payments",
+        //   icon: DollarSign,
+        // },
+        // {
+        //   title: "Budget Overview",
+        //   url: "/dashboard/client/budget",
+        //   icon: PieChart,
+        // },
+        // {
+        //   title: "Payment History",
+        //   url: "/dashboard/client/payments/history",
+        //   icon: Clock,
+        // },
       ],
     },
   ],
@@ -554,7 +572,7 @@ export function getSidebarConfig(role: string, user?: { name: string; email: str
   };
 
   const config = baseConfigs[role as keyof typeof baseConfigs] || clientSidebarConfig;
-  
+
   // Update user info if provided
   if (user) {
     config.user = {

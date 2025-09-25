@@ -19,7 +19,7 @@ import { SignInFormSchema, DEMO_ACCOUNTS, type UserRole } from "@/sections/auth"
 import type { z } from "zod";
 
 const ROLE_CONFIG = {
-  admin: { icon: Shield, color: 'destructive' as const },
+  // admin: { icon: Shield, color: 'destructive' as const },
   manager: { icon: Users, color: 'default' as const },
   client: { icon: User, color: 'secondary' as const }
 } as const;
@@ -36,16 +36,16 @@ export default function Home() {
 
   const handleSignIn = async (values: z.infer<typeof SignInFormSchema>) => {
     setIsLoading(true);
-    
+
     try {
       // Simulate authentication delay
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      
+
       // Check against demo accounts
-      const account = DEMO_ACCOUNTS.find(acc => 
+      const account = DEMO_ACCOUNTS.find(acc =>
         acc.email === values.email && acc.password === values.password
       );
-      
+
       if (account) {
         // Store user info in localStorage for demo purposes
         localStorage.setItem('user', JSON.stringify({
@@ -53,16 +53,16 @@ export default function Home() {
           name: account.name,
           role: account.role
         }));
-        
+
         toast.success(`Welcome back, ${account.name}!`);
-        
+
         // Route based on role
         const roleRoutes = {
           admin: '/dashboard/admin',
           manager: '/dashboard/manager',
           client: '/dashboard/client'
         } as const;
-        
+
         router.push(roleRoutes[account.role] || '/dashboard');
       } else {
         toast.error("Invalid email or password. Please try again or use a demo account.");
@@ -127,11 +127,11 @@ export default function Home() {
                           <FormItem>
                             <FormLabel className="text-sm font-medium text-gray-700">Email Address</FormLabel>
                             <FormControl>
-                              <Input 
-                                placeholder="user@email.com" 
+                              <Input
+                                placeholder="user@email.com"
                                 disabled={isLoading}
                                 className="h-11 text-base"
-                                {...field} 
+                                {...field}
                               />
                             </FormControl>
                             <FormMessage />
@@ -146,12 +146,12 @@ export default function Home() {
                           <FormItem>
                             <FormLabel className="text-sm font-medium text-gray-700">Password</FormLabel>
                             <FormControl>
-                              <Input 
-                                placeholder="Enter your password" 
+                              <Input
+                                placeholder="Enter your password"
                                 disabled={isLoading}
                                 className="h-11 text-base"
                                 type="password"
-                                {...field} 
+                                {...field}
                               />
                             </FormControl>
                             <FormMessage />
@@ -189,7 +189,7 @@ export default function Home() {
                   {DEMO_ACCOUNTS.map((account) => {
                     const { icon: Icon, color } = ROLE_CONFIG[account.role];
                     const isCopied = copiedAccount === account.email;
-                    
+
                     return (
                       <div
                         key={account.email}
@@ -216,12 +216,12 @@ export default function Home() {
                               Use Account
                             </Button>
                           </div>
-                          
+
                           <div>
                             <p className="font-medium text-gray-900">{account.name}</p>
                             <p className="text-sm text-gray-600 mt-1">{account.description}</p>
                           </div>
-                          
+
                           <div className="space-y-2">
                             <div className="flex items-center gap-2">
                               <span className="text-xs font-medium text-gray-500 w-12">Email:</span>
@@ -263,9 +263,9 @@ export default function Home() {
                     );
                   })}
                 </div>
-                
+
                 <Separator className="my-6" />
-                
+
                 <div className="text-center">
                   <p className="text-sm font-medium text-gray-700 mb-1">Quick Access</p>
                   <p className="text-xs text-gray-500">

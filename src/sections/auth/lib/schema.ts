@@ -21,15 +21,15 @@ export type SignInFormSchema = z.infer<typeof SignInFormSchema>;
 
 // Demo accounts data
 export const DEMO_ACCOUNTS = [
+  // {
+  //   email: "admin@trio.com",
+  //   password: "admin123",
+  //   name: "Admin User",
+  //   role: "admin" as const,
+  //   description: "Full system access and management capabilities"
+  // },
   {
-    email: "admin@trio.com",
-    password: "admin123",
-    name: "Admin User",
-    role: "admin" as const,
-    description: "Full system access and management capabilities"
-  },
-  {
-    email: "manager@trio.com", 
+    email: "manager@trio.com",
     password: "manager123",
     name: "Project Manager",
     role: "manager" as const,
@@ -37,7 +37,7 @@ export const DEMO_ACCOUNTS = [
   },
   {
     email: "client@trio.com",
-    password: "client123", 
+    password: "client123",
     name: "Client User",
     role: "client" as const,
     description: "View project progress and communicate with team"
